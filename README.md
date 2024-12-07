@@ -1,1 +1,3 @@
-# see-bz.github.io
+# See.bz
+
+[View here](!https://see.bz)
