@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist&display=swap");
 
 * {
   font-family: "Geist", sans-serif;
@@ -6,7 +6,7 @@
 }
 
 ::selection {
-  background-color: #164e4e;
+  background-color: #2c2c2c;
   color: white;
 }
 
@@ -20,28 +20,56 @@ h1 {
   color: #2c3e50;
 }
 
+.text-tight {
+  letter-spacing: -.05em;
+}
+
 .header {
-  background: url("/assets/images/dots.svg");
-  text-shadow: 1px 1px 3px #164e4e;
-  text-align: center;
-  padding: 25vh 0;
-  margin: 0 0 4rem 0;
-  color: #fff;
-  position: relative;
+  text-align: left;
+  padding: 10vh 0;
 }
 
 .header h1 {
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 3rem;
   z-index: 2;
   position: relative;
 }
 
 .header p {
-  color: white;
+  color: rgb(25, 25, 25);
   font-size: 1.2rem;
   z-index: 2;
   position: relative;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin: 0;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.section-title::before {
+  content: "";
+  display: block;
+  width: 85%;
+  height: 1.5px;
+  background-color: #666;
+  position: absolute;
+  bottom: -4px;
+  right: 0;
 }
 
 .project-container {
@@ -63,15 +91,11 @@ h1 {
   float: right;
 }
 
-.project:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
-}
 
 .project-title {
-  margin-bottom: 15px;
-  font-weight: bold;
-  color: #2c3e50;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: #141414;
 }
 
 .project-description {
@@ -79,10 +103,22 @@ h1 {
   margin-bottom: 20px;
 }
 
+.project-link {
+  background-color: #2c2c2c;
+  color: white;
+  border: 1px solid transparent;
+}
+
+.project-link:hover {
+  border: 1px solid black;
+  background-color: #f2f2f2;
+  color: black;
+}
+
 .footer {
-  background-color: #193232;
+  background-color: #0f0f0f;
   color: #ffffff;
-  padding: 20px 0;
+  padding: 3rem 0 5rem 0;
   text-align: center;
 }
 
