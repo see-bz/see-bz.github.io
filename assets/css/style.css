@@ -1,53 +1,86 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist&display=swap");
 
+:root {
+  --font-heading: "Geist", sans-serif;
+  --font-body: "Geist", sans-serif;
+
+  --color-theme: #31095680;
+  --bg-color: white;
+  --color-heading: #000;
+  --color-body: #2c2c2c;
+  --color-description: #555;
+  --color-secondary: #eee;
+
+  --bg-selection: #000;
+  --color-selection: white;
+}
+
+.dark {
+  --bg-color: #121212;
+  --color-heading: #ffffff;
+  --color-body: #e0e0e0;
+  --color-description: #b0b0b0;
+  --color-secondary: #191919;
+  --bg-selection: #ddd;
+  --color-selection: #121212;
+}
+
 * {
-  font-family: "Geist", sans-serif;
+  font-family: var(--font-body);
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 ::selection {
-  background-color: #2c2c2c;
-  color: white;
+  background-color: var(--bg-selection);
+  color: var(--color-selection);
 }
 
 body {
-  background-color: #f4f6f9;
-  color: #333;
+  background-color: var(--bg-color);
+  color: var(--color-body);
+  line-height: 1.6;
 }
 
 h1 {
   font-weight: 700;
-  color: #2c3e50;
+  color: var(--color-heading);
 }
 
 .text-tight {
-  letter-spacing: -.05em;
+  letter-spacing: -0.05em;
 }
 
+/* Header */
 .header {
-  text-align: left;
-  padding: 10vh 0;
+  padding-bottom: 10vh;
+  background: linear-gradient(180deg, var(--color-theme), transparent, transparent);
+  text-align: center;
+  position: relative;
 }
 
 .header h1 {
-  color: rgb(0, 0, 0);
   font-size: 3rem;
-  z-index: 2;
+  padding-top: 150px;
   position: relative;
+  z-index: 2;
 }
 
 .header p {
-  color: rgb(25, 25, 25);
   font-size: 1.2rem;
-  z-index: 2;
   position: relative;
+  z-index: 2;
 }
 
+/* Section Titles */
 .section-title {
   position: relative;
   display: inline-block;
   padding-bottom: 10px;
   margin: 0;
+  font-weight: 500;
 }
 
 .section-title::after {
@@ -55,7 +88,7 @@ h1 {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: #333;
+  background-color: var(--color-heading);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -66,24 +99,39 @@ h1 {
   display: block;
   width: 85%;
   height: 1.5px;
-  background-color: #666;
+  background-color: var(--color-body);
   position: absolute;
   bottom: -4px;
   right: 0;
 }
 
+/* Projects */
 .project-container {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin: 40px 0;
 }
 
 .project {
-  background: linear-gradient(135deg, #ffffff, #f4f4f4);
+  background: linear-gradient(135deg, transparent, transparent, transparent, var(--color-secondary));
   padding: 30px;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.1s;
   position: relative;
+}
+
+.dark .project {
+  background: linear-gradient(135deg, transparent, transparent, transparent, var(--color-secondary));
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.dark .project:hover {
+  box-shadow: 0 12px 25px rgba(255, 255, 255, 0.15);
 }
 
 .project.featured .project-title::after {
@@ -91,45 +139,62 @@ h1 {
   float: right;
 }
 
-
 .project-title {
   margin-bottom: 0.25rem;
   font-weight: 600;
-  color: #141414;
+  color: var(--color-heading);
 }
 
 .project-description {
-  color: #555;
+  color: var(--color-description);
   margin-bottom: 20px;
 }
 
 .project-link {
-  background-color: #2c2c2c;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-body);
   color: white;
   border: 1px solid transparent;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .project-link:hover {
-  border: 1px solid black;
-  background-color: #f2f2f2;
+  border: 1px solid var(--bg-selection);
+  background-color: white;
   color: black;
 }
 
+.dark .project-link {
+  background-color: #444;
+  color: white;
+}
+
+.dark .project-link:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Footer */
 .footer {
   background-color: #0f0f0f;
   color: #ffffff;
-  padding: 3rem 0 5rem 0;
+  padding: 3rem 0 5rem;
   text-align: center;
 }
 
 .footer a {
   color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
 }
 
 .footer a:hover {
+  color: #ddd;
   text-decoration: underline;
 }
 
-footer .credits {
+.footer .credits {
   color: #ccc;
 }

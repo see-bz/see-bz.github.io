@@ -1,0 +1,83 @@
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Creating multiple stars using nth-child */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: moveUp linear infinite;
+}
+
+.star {
+background: black;
+}
+
+.dark .star {
+  background: white;
+}
+
+@keyframes moveUp {
+  from {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-10vh);
+    opacity: 1;
+  }
+}
+
+/* Generate stars dynamically */
+.stars .star:nth-child(1) {
+  left: 10%;
+  animation-duration: 8s;
+}
+.stars .star:nth-child(2) {
+  left: 30%;
+  animation-duration: 12s;
+}
+.stars .star:nth-child(3) {
+  left: 50%;
+  animation-duration: 10s;
+}
+.stars .star:nth-child(4) {
+  left: 70%;
+  animation-duration: 14s;
+}
+.stars .star:nth-child(5) {
+  left: 90%;
+  animation-duration: 9s;
+}
+.stars .star:nth-child(6) {
+  left: 20%;
+  animation-duration: 11s;
+}
+.stars .star:nth-child(7) {
+  left: 40%;
+  animation-duration: 7s;
+}
+.stars .star:nth-child(8) {
+  left: 60%;
+  animation-duration: 13s;
+}
+.stars .star:nth-child(9) {
+  left: 80%;
+  animation-duration: 15s;
+}
+.stars .star:nth-child(10) {
+  left: 5%;
+  animation-duration: 6s;
+}
+
+/* Light mode styles */
+@media (prefers-color-scheme: light) {
+  .star {
+    background: rgb(46, 46, 46);
+  }
+}
