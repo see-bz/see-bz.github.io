@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400..900&display=swap');
 
 :root {
   --font-heading: "Geist", sans-serif;
@@ -154,7 +154,7 @@ h1 {
 
 .project-title {
   margin-bottom: 0.25rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-heading);
 }
 
